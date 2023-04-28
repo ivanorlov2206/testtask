@@ -4,7 +4,7 @@ from flask import Flask, request
 
 import data
 from data_processing import filter_by_column_value, replace_nan_with_null, limit_fields, perform_sort, \
-    parse_column_and_modificator, is_column, is_operation
+    parse_column_and_modifier, is_column, is_operation
 from validation import validate_fields_for_operation, preprocess_argument
 
 
@@ -24,7 +24,7 @@ def comp_data():
     for param, value in args.items():
         value = preprocess_argument(value)
         if is_column(param):
-            column_name, modifier = parse_column_and_modificator(param)
+            column_name, modifier = parse_column_and_modifier(param)
             if not column_name:
                 return make_error("Bad field name: {}".format(param))
             data_to_return = filter_by_column_value(data_to_return, column_name, modifier, value)

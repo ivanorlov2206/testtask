@@ -12,7 +12,7 @@ def perform_sort(dt, fields):
     return dt.sort_values(by=fields)
 
 
-def parse_column_and_modificator(arg):
+def parse_column_and_modifier(arg):
     operation_re = r'\[(gte|le|gt|l|e)\]$'
     match = re.search(operation_re, arg)
     if match:
