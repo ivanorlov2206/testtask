@@ -3,7 +3,7 @@
 This service can perform filtering and sorting operations on the given dataset.
 ## How to try
 ```
-flask --app main run
+flask run
 ```
 After that you can perform simple GET requests to the http://localhost:5000/compensation_data endpoint. For example:
 ```
