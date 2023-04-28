@@ -1,6 +1,8 @@
 import numpy as np
 import re
 
+import data
+
 
 def limit_fields(dt, fields):
     return dt[fields]
@@ -32,6 +34,17 @@ def filter_by_column_value(dt, col, op, value):
         return dt.loc[dt[col] < value]
     else:
         return dt.loc[dt[col] == value]
+
+
+def is_column(param):
+    param = param.split('[')[0]
+    if param in data.column_names:
+        return True
+    return False
+
+
+def is_operation(param):
+    return param in data.possible_operations
 
 
 def replace_nan_with_null(dt):
