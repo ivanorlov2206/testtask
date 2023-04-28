@@ -5,12 +5,11 @@ from validation import validate_fields_for_operation, preprocess_argument
 
 class TestValidation(unittest.TestCase):
     def test_fields_validation(self):
-        columns = ["column1", "column2", "column3", "column4", "column5"]
-        val_res, val_msg = validate_fields_for_operation(columns, "sort", "column5")
+        val_res, val_msg = validate_fields_for_operation("sort", "bonus")
         self.assertTrue(val_res)
-        val_res, val_msg = validate_fields_for_operation(columns, "sort", "column6")
+        val_res, val_msg = validate_fields_for_operation("sort", "column1")
         self.assertFalse(val_res)
-        val_res, val_msg = validate_fields_for_operation(columns, "sort", None)
+        val_res, val_msg = validate_fields_for_operation("sort", None)
         self.assertFalse(val_res)
 
     def argument_preprocessing(self):
