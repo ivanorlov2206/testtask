@@ -1,12 +1,10 @@
 import json
 
 from flask import Flask, request
-
-import data
-from data_processing import filter_by_column_value, replace_nan_with_null, limit_fields, perform_sort, \
-    parse_column_and_modifier, is_column, is_operation
-from validation import validate_fields_for_operation, preprocess_argument
-
+import app.data as data
+from app.data_processing import is_column, parse_column_and_modifier, filter_by_column_value, is_operation, \
+    perform_sort, limit_fields, replace_nan_with_null
+from app.validation import preprocess_argument, validate_fields_for_operation
 
 app = Flask(__name__)
 

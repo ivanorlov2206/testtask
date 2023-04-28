@@ -1,6 +1,6 @@
 import unittest
 
-from validation import validate_fields_for_operation, preprocess_argument
+from app.validation import validate_fields_for_operation, preprocess_argument
 
 
 class TestValidation(unittest.TestCase):

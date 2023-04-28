@@ -1,7 +1,7 @@
 import numpy as np
 import re
 
-import data
+import app.data as data
 
 
 def limit_fields(dt, fields):

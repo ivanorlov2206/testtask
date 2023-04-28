@@ -1,4 +1,4 @@
-import data
+import app.data as data
 
 
 def validate_fields_for_operation(operation, fields_s):
